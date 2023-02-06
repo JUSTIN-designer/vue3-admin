@@ -1,6 +1,6 @@
 <template>
 	<el-container>
-      <el-aside width="200px"><Aside/></el-aside>
+      <el-aside width="201px"><Aside :items="asideItems"/></el-aside>
       <el-container>
         <el-header>Header</el-header>
         <el-main><router-view/></el-main>
@@ -9,8 +9,10 @@
 </template>
 <script lang="ts" setup>
 import {ElContainer, ElAside, ElHeader, ElMain} from 'element-plus'
+import { ref } from 'vue';
 import Aside from './Aside.vue';
-
+import menuConfig from '@/configs/menu.js'
+const asideItems = ref(menuConfig)
 </script>
 <style scoped>
 .el-aside{
